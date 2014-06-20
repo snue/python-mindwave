@@ -13,7 +13,7 @@ pygame.display.set_caption("Mindwave Viewer")
 
 from pymindwave.parser import Parser
 
-p = Parser('/dev/ttyUSB0')
+p = Parser('/dev/ttyUSB3')
 
 blackColor = pygame.Color(0,0,0)
 redColor = pygame.Color(255,0,0)
@@ -118,4 +118,5 @@ while True:
                 p.stop_esense_recording()
                 p.stop_raw_recording()
     pygame.display.update()
-    fpsClock.tick(30)
+    # fpsClock.tick(30)
+    fpsClock.tick(40)

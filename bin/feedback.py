@@ -206,6 +206,6 @@ if __name__=="__main__":
 	pygame.display.set_caption("PyGame Neurofeedback Trainer")
 
 	from pymindwave.parser import Parser
-	p = Parser('/dev/ttyUSB0')
+	p = Parser('/dev/ttyUSB3')
 	feedback_menu(window, p)
 
