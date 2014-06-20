@@ -4,7 +4,7 @@
 from distutils.core import setup
 
 setup(name="pymindwave",
-    verseion='1.0',
+    version='1.0',
     description='python library to interface with Neurosky Mindwave haedset',
     author='Andreas Klostermann',
     url='https://github.com/akloster/python-mindwave',
