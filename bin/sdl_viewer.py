@@ -89,8 +89,10 @@ while True:
         if raw_eeg:
             lv = 0
             for i,value in enumerate(p.raw_values[-1000:]):
-                v = value/ 255.0/ 5
-                pygame.draw.line(window, redColor, (i+25, 500-lv), (i+25, 500-v))
+                if value >= 32768:
+                    value = value - 65536
+                v = value / 5.0
+                pygame.draw.line(window, redColor, (i+25, 550-lv), (i+25, 550-v))
                 lv = v
     else:
         img = font.render("Mindwave Headset is not sending data... Press F5 to autoconnect or F6 to disconnect.", False, redColor)
@@ -118,5 +120,4 @@ while True:
                 p.stop_esense_recording()
                 p.stop_raw_recording()
     pygame.display.update()
-    # fpsClock.tick(30)
-    fpsClock.tick(40)
+    fpsClock.tick(30)
